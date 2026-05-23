@@ -1,0 +1,92 @@
+:root {
+  /* ---------- Type families ---------- */
+  --ff-display: var(--font-space-grotesk), system-ui, -apple-system, sans-serif;
+  --ff-display-em: var(--font-plus-jakarta-sans), system-ui, -apple-system, sans-serif;
+  --ff-sans: var(--font-plus-jakarta-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ff-mono: var(--font-geist-mono), 'JetBrains Mono', ui-monospace, monospace;
+
+  /* ---------- Type scale (rem at 16px root) ---------- */
+  --fs-2xs: 0.6875rem; /* 11 — micro labels, runtime */
+  --fs-xs: 0.75rem; /* 12 — caption */
+  --fs-sm: 0.8125rem; /* 13 — meta, helpers */
+  --fs-md: 0.9375rem; /* 15 — body */
+  --fs-lg: 1.0625rem; /* 17 — emphasized body */
+  --fs-xl: 1.25rem; /* 20 — card title */
+  --fs-2xl: 1.625rem; /* 26 — section title */
+  --fs-3xl: 2.25rem; /* 36 — page title */
+  --fs-4xl: 3.25rem; /* 52 — hero serif */
+  --fs-5xl: 5rem; /* 80 — billboard */
+
+  /* ---------- Weight ---------- */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ---------- Line height ---------- */
+  --lh-tight: 1.05;
+  --lh-snug: 1.2;
+  --lh-normal: 1.45;
+  --lh-relaxed: 1.65;
+
+  /* ---------- Letter-spacing ---------- */
+  /* Space Grotesk is wider than Instrument Serif — pull display tracking tighter */
+  --tracking-tight: -0.035em;
+  --tracking-snug: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.16em; /* eyebrows in caps — Space Grotesk needs more air */
+
+  /* ---------- Spacing (4px base) ---------- */
+  --sp-0: 0;
+  --sp-1: 0.25rem; /* 4 */
+  --sp-2: 0.5rem; /* 8 */
+  --sp-3: 0.75rem; /* 12 */
+  --sp-4: 1rem; /* 16 */
+  --sp-5: 1.25rem; /* 20 */
+  --sp-6: 1.5rem; /* 24 */
+  --sp-8: 2rem; /* 32 */
+  --sp-10: 2.5rem; /* 40 */
+  --sp-12: 3rem; /* 48 */
+  --sp-16: 4rem; /* 64 */
+  --sp-20: 5rem; /* 80 */
+  --sp-24: 6rem; /* 96 */
+
+  /* ---------- Radius ---------- */
+  --r-none: 0;
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 18px;
+  --r-2xl: 24px;
+  --r-pill: 999px;
+  --r-circle: 50%;
+
+  /* ---------- Border ---------- */
+  --bw-hair: 0.5px;
+  --bw-1: 1px;
+  --bw-2: 2px;
+
+  /* ---------- Z-index ---------- */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 800;
+  --z-modal: 900;
+  --z-toast: 1000;
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-stage: cubic-bezier(0.2, 0.8, 0.2, 1); /* curtain reveal */
+  --dur-instant: 80ms;
+  --dur-fast: 160ms;
+  --dur-base: 240ms;
+  --dur-slow: 420ms;
+  --dur-curtain: 720ms;
+
+  /* ---------- Layer / Elevation primitives ---------- */
+  --grain-opacity: 0.04;
+}
+

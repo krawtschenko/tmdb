@@ -1,0 +1,99 @@
+/* ============================================================
+   DARK THEME — Obsidian (default)
+   Warm-tinted darkness, brass accent, ember signal
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Surfaces */
+    --bg-stage: oklch(0.13 0.005 60); /* page */
+    --bg-canvas: oklch(0.16 0.005 60); /* card */
+    --bg-elevated: oklch(0.2 0.006 60); /* modal, popover */
+    --bg-sunken: oklch(0.1 0.004 60); /* inset, input */
+    --bg-overlay: oklch(0.06 0.004 60 / 0.72);
+
+    /* Foreground */
+    --fg-primary: oklch(0.97 0.008 80); /* vellum */
+    --fg-secondary: oklch(0.78 0.008 80);
+    --fg-tertiary: oklch(0.58 0.008 80);
+    --fg-muted: oklch(0.42 0.008 80);
+    --fg-on-accent: oklch(0.13 0.005 60);
+
+    /* Lines */
+    --line-subtle: oklch(0.24 0.005 60);
+    --line-strong: oklch(0.34 0.006 60);
+    --line-accent: oklch(0.72 0.1 75);
+
+    /* Accents */
+    --accent: oklch(0.74 0.1 75); /* brass */
+    --accent-hover: oklch(0.8 0.11 75);
+    --accent-press: oklch(0.68 0.1 75);
+    --accent-soft: oklch(0.74 0.1 75 / 0.14);
+
+    /* Signal — rating, alert, recording dot */
+    --signal: oklch(0.66 0.18 25); /* ember */
+    --signal-soft: oklch(0.66 0.18 25 / 0.16);
+
+    /* Semantic */
+    --success: oklch(0.7 0.1 150);
+    --warning: oklch(0.78 0.13 75);
+    --danger: oklch(0.62 0.2 25);
+    --info: oklch(0.7 0.08 220);
+
+    /* Shadows */
+    --shadow-1: 0 1px 2px rgb(0 0 0 / 0.5);
+    --shadow-2: 0 4px 14px rgb(0 0 0 / 0.45), 0 1px 2px rgb(0 0 0 / 0.4);
+    --shadow-3: 0 14px 40px rgb(0 0 0 / 0.55), 0 2px 6px rgb(0 0 0 / 0.4);
+    --shadow-4: 0 28px 80px rgb(0 0 0 / 0.65), 0 8px 20px rgb(0 0 0 / 0.5);
+    --shadow-glow: 0 0 0 1px oklch(0.74 0.1 75 / 0.4), 0 8px 32px oklch(0.74 0.1 75 / 0.18);
+    --ring-focus: 0 0 0 2px var(--bg-stage), 0 0 0 4px oklch(0.74 0.1 75 / 0.7);
+
+    /* Component-specific */
+    --poster-fallback: linear-gradient(135deg, oklch(0.22 0.01 60), oklch(0.14 0.005 60));
+  }
+}
+
+/* ============================================================
+   LIGHT THEME — Vellum
+   Warm paper, ink primary, brass accent retained
+   ============================================================ */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-stage: oklch(0.97 0.008 80);
+    --bg-canvas: oklch(1 0 0);
+    --bg-elevated: oklch(1 0 0);
+    --bg-sunken: oklch(0.94 0.01 80);
+    --bg-overlay: oklch(0.2 0.006 60 / 0.45);
+
+    --fg-primary: oklch(0.18 0.005 60);
+    --fg-secondary: oklch(0.36 0.006 60);
+    --fg-tertiary: oklch(0.5 0.006 60);
+    --fg-muted: oklch(0.65 0.006 60);
+    --fg-on-accent: oklch(0.13 0.005 60);
+
+    --line-subtle: oklch(0.88 0.008 80);
+    --line-strong: oklch(0.78 0.008 80);
+    --line-accent: oklch(0.55 0.1 75);
+
+    --accent: oklch(0.58 0.11 75);
+    --accent-hover: oklch(0.52 0.11 75);
+    --accent-press: oklch(0.48 0.11 75);
+    --accent-soft: oklch(0.58 0.11 75 / 0.12);
+
+    --signal: oklch(0.55 0.2 25);
+    --signal-soft: oklch(0.55 0.2 25 / 0.1);
+
+    --success: oklch(0.55 0.12 150);
+    --warning: oklch(0.65 0.15 75);
+    --danger: oklch(0.55 0.22 25);
+    --info: oklch(0.55 0.1 220);
+
+    --shadow-1: 0 1px 2px rgb(20 14 10 / 0.06);
+    --shadow-2: 0 4px 14px rgb(20 14 10 / 0.08), 0 1px 2px rgb(20 14 10 / 0.04);
+    --shadow-3: 0 14px 40px rgb(20 14 10 / 0.12), 0 2px 6px rgb(20 14 10 / 0.06);
+    --shadow-4: 0 28px 80px rgb(20 14 10 / 0.18), 0 8px 20px rgb(20 14 10 / 0.1);
+    --shadow-glow: 0 0 0 1px oklch(0.58 0.11 75 / 0.35), 0 8px 32px oklch(0.58 0.11 75 / 0.18);
+    --ring-focus: 0 0 0 2px var(--bg-canvas), 0 0 0 4px oklch(0.58 0.11 75 / 0.65);
+
+    --poster-fallback: linear-gradient(135deg, oklch(0.9 0.01 80), oklch(0.82 0.01 80));
+  }
+}

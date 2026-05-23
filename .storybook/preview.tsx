@@ -1,7 +1,29 @@
 import type { Preview } from '@storybook/nextjs-vite';
+import './fonts.css';
+import '../src/styles/styles.css';
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '100vh',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
+    backgrounds: {
+      options: {
+        light: { name: 'Light', value: '#ffffff' },
+        dark: { name: 'Dark', value: '#0a0a0a' },
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
