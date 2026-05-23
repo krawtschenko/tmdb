@@ -20,6 +20,12 @@
     transform var(--dur-fast) var(--ease-out);
   appearance: none;
 
+  &:not(:disabled) {
+    &:active {
+      transform: translateY(0.5px);
+    }
+  }
+
   &:disabled {
     cursor: not-allowed;
     opacity: 0.45;
@@ -75,10 +81,6 @@
       background: var(--bg-canvas);
     }
 
-    &:active {
-      transform: translateY(0.5px);
-    }
-
     &:focus-visible {
       outline: 0;
       box-shadow: var(--ring-focus);
@@ -95,10 +97,6 @@
       background: var(--accent-soft);
     }
 
-    &:active {
-      transform: translateY(0.5px);
-    }
-
     &:focus-visible {
       outline: 0;
       box-shadow: var(--ring-focus);
@@ -113,10 +111,6 @@
   &:not(:disabled) {
     &:hover {
       filter: brightness(1.1);
-    }
-
-    &:active {
-      transform: translateY(0.5px);
     }
 
     &:focus-visible {

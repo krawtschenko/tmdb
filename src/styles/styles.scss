@@ -1,5 +1,5 @@
-@import './tokens';
-@import './tokens.color';
+@use './tokens' as tokens;
+@use './tokens.color' as color;
 
 /* ============================================================
    Global resets + utilities

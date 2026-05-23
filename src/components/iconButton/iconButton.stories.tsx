@@ -1,0 +1,20 @@
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
+import { Search } from 'lucide-react';
+
+import { IconButton } from './iconButton';
+
+const meta: Meta<typeof IconButton> = {
+  component: IconButton,
+};
+
+export default meta;
+
+type Story = StoryObj<typeof IconButton>;
+
+export const Default: Story = {
+  args: {
+    variant: 'solid',
+    size: 'md',
+    icon: Search,
+  },
+};
