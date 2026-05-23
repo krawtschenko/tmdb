@@ -1,7 +1,9 @@
 import type { ComponentPropsWithoutRef, ElementType } from 'react';
-import type { LucideIcon } from 'lucide-react';
-import styles from './button.module.scss';
+
 import clsx from 'clsx';
+import type { LucideIcon } from 'lucide-react';
+
+import styles from './button.module.scss';
 
 type Props<T extends ElementType> = {
   as?: T;

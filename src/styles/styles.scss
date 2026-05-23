@@ -1,14 +1,14 @@
-@import url('./tokens.css');
-@import url('./tokens.color.css');
+@import './tokens';
+@import './tokens.color';
 
 /* ============================================================
    Global resets + utilities
    ============================================================ */
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -22,11 +22,11 @@ body {
 }
 
 body {
+  background: var(--bg-stage);
+  color: var(--fg-primary);
   font-family: var(--ff-sans);
   font-size: var(--fs-md);
   line-height: var(--lh-normal);
-  color: var(--fg-primary);
-  background: var(--bg-stage);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
 }
