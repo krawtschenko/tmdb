@@ -1,0 +1,28 @@
+.spin {
+  --size: 24px;
+
+  width: var(--size);
+  height: var(--size);
+  border: 2px solid var(--line-subtle);
+  border-radius: var(--r-circle);
+  animation: reel-spin 720ms linear infinite;
+  border-top-color: var(--accent);
+
+  &.sm {
+    --size: 16px;
+
+    border-width: 1.5px;
+  }
+
+  &.lg {
+    --size: 40px;
+
+    border-width: 3px;
+  }
+}
+
+@keyframes reel-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
