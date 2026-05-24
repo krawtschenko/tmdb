@@ -1,0 +1,34 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  height: 32px;
+  padding: 0 var(--sp-4);
+  border: 0;
+  border-radius: var(--r-pill);
+  box-shadow: inset 0 0 0 1px var(--line-subtle);
+  background: transparent;
+  color: var(--fg-secondary);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease-out);
+  appearance: none;
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px var(--line-strong);
+    color: var(--fg-primary);
+  }
+
+  &[data-state='on'] {
+    box-shadow: none;
+    background: var(--accent);
+    color: var(--fg-on-accent);
+
+    &:hover {
+      background: var(--accent-hover);
+    }
+  }
+}
