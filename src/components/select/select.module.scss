@@ -1,0 +1,54 @@
+.trigger {
+  all: unset;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  height: 40px;
+  padding: 0 var(--sp-4);
+  border-radius: var(--r-md);
+  box-shadow: inset 0 0 0 1px var(--line-subtle);
+  background: var(--bg-sunken);
+  color: var(--fg-primary);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-md);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    box-shadow var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+
+  &:hover {
+    box-shadow: inset 0 0 0 1px var(--line-strong);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow:
+      inset 0 0 0 1px var(--accent),
+      0 0 0 3px var(--accent-soft);
+    background: var(--bg-canvas);
+  }
+
+  &[data-placeholder] {
+    color: var(--fg-muted);
+  }
+
+  .icon {
+    display: flex;
+    color: var(--fg-tertiary);
+  }
+}
+
+.content {
+  min-width: var(--radix-select-trigger-width);
+  overflow: hidden;
+  border: 1px solid var(--line-subtle);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-3);
+  background: var(--bg-elevated);
+
+  .viewport {
+    padding: var(--sp-1);
+  }
+}

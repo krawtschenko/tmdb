@@ -1,0 +1,35 @@
+.Item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 var(--sp-4) 0 var(--sp-8);
+  border-radius: var(--r-md);
+  color: var(--fg-primary);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-md);
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--dur-instant) var(--ease-out);
+
+  &[data-disabled] {
+    color: var(--fg-muted);
+    pointer-events: none;
+  }
+
+  &[data-highlighted] {
+    outline: none;
+    background: var(--accent-soft);
+    color: var(--fg-primary);
+  }
+}
+
+.ItemIndicator {
+  position: absolute;
+  left: var(--sp-2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sp-4);
+  color: var(--accent);
+}
