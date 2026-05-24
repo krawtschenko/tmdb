@@ -53,8 +53,7 @@
   border-radius: var(--r-md);
 }
 
-.solid,
-.circle {
+.solid {
   box-shadow: inset 0 0 0 1px var(--line-subtle);
   background: var(--bg-canvas);
   color: var(--fg-primary);

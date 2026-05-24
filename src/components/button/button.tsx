@@ -7,8 +7,8 @@ import styles from './button.module.scss';
 
 type Props<T extends ElementType> = {
   as?: T;
-  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
   size?: 'sm' | 'md' | 'lg';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
   iconLeft?: LucideIcon;
   iconRight?: LucideIcon;
   loading?: boolean;
