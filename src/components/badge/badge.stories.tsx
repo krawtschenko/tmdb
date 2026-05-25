@@ -13,6 +13,7 @@ type Story = StoryObj<typeof Badge>;
 
 export const Default: Story = {
   args: {
+    variant: 'accent',
     text: 'Watched',
     icon: Clock8,
   },

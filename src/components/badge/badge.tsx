@@ -5,11 +5,11 @@ import styles from './badge.module.scss';
 
 type Props = {
   text: string;
-  variant?: 'neutral' | 'accent' | 'signal' | 'success' | 'solid';
+  variant: 'neutral' | 'accent' | 'signal' | 'success' | 'solid';
   icon?: LucideIcon;
 };
 
-export const Badge = ({ text, variant = 'neutral', icon: Icon }: Props) => {
+export const Badge = ({ text, variant, icon: Icon }: Props) => {
   return (
     <span className={clsx(styles.badge, styles[variant])}>
       {Icon && <Icon size={11} />}
