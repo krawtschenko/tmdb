@@ -28,6 +28,7 @@
     --accent-hover: oklch(80% 0.11 75deg);
     --accent-press: oklch(68% 0.1 75deg);
     --accent-soft: oklch(74% 0.1 75deg / 14%);
+    --accent-soft-hover: oklch(74% 0.1 75deg / 22%);
 
     /* Signal — rating, alert, recording dot */
     --signal: oklch(66% 0.18 25deg); /* ember */
@@ -75,6 +76,7 @@
     --accent-hover: oklch(52% 0.11 75deg);
     --accent-press: oklch(48% 0.11 75deg);
     --accent-soft: oklch(58% 0.11 75deg / 12%);
+    --accent-soft-hover: oklch(58% 0.11 75deg / 20%);
     --signal: oklch(55% 0.2 25deg);
     --signal-soft: oklch(55% 0.2 25deg / 10%);
     --success: oklch(55% 0.12 150deg);

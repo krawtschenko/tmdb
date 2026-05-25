@@ -1,0 +1,30 @@
+import { useState } from 'react';
+
+import { Meta, StoryObj } from '@storybook/nextjs-vite';
+
+import { WatchlistButton } from './watchlistButton';
+
+const meta: Meta<typeof WatchlistButton> = {
+  component: WatchlistButton,
+};
+
+export default meta;
+
+type Story = StoryObj<typeof WatchlistButton>;
+
+export const Default: Story = {
+  args: {
+    compact: true,
+  },
+};
+
+export const Controlled: Story = {
+  args: {
+    compact: false,
+  },
+  render: (args) => {
+    const [pressed, setPressed] = useState(false);
+
+    return <WatchlistButton {...args} pressed={pressed} onPressedChange={setPressed} />;
+  },
+};
