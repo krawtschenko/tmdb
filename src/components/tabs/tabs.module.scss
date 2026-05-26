@@ -1,0 +1,29 @@
+.list {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--sp-1);
+
+  .trigger {
+    all: unset;
+    padding: 8px 14px;
+    border-radius: var(--r-pill);
+    color: var(--fg-secondary);
+    font-family: var(--ff-sans);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      color var(--dur-fast) var(--ease-out),
+      background var(--dur-fast) var(--ease-out);
+
+    &:hover {
+      color: var(--fg-primary);
+    }
+
+    &[data-state='active'] {
+      background: var(--accent-soft);
+      color: var(--fg-primary);
+    }
+  }
+}

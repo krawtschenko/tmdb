@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Tag } from './tag';
+import { TagGroup } from './tagGroup';
 
-const meta: Meta<typeof Tag> = {
-  component: Tag,
+const meta: Meta<typeof TagGroup> = {
+  component: TagGroup,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Tag>;
+type Story = StoryObj<typeof TagGroup>;
 
-const TAGS = [
+const TABS = [
   { value: 'discover', label: 'Discover' },
   { value: 'films', label: 'Films' },
   { value: 'people', label: 'People', disabled: true },
@@ -20,13 +20,13 @@ const TAGS = [
 export const Default: Story = {
   args: {
     type: 'single',
-    tabs: TAGS,
+    tabs: TABS,
   },
 };
 
 export const Multiple: Story = {
   args: {
     type: 'multiple',
-    tabs: TAGS,
+    tabs: TABS,
   },
 };
