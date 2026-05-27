@@ -1,4 +1,6 @@
-type Props = {};
+type Props = {
+  test?: string;
+};
 
 export const Header = ({}: Props) => {
   return <div></div>;

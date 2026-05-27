@@ -1,10 +1,9 @@
 import { ComponentPropsWithoutRef } from 'react';
 
 import * as SelectRadix from '@radix-ui/react-select';
-import { ChevronDown } from 'lucide-react';
+import { Check, ChevronDown } from 'lucide-react';
 
 import styles from './select.module.scss';
-import { SelectItem } from './selectItem/selectItem';
 
 type Option = { value: string; label: string; disabled?: boolean };
 
@@ -23,13 +22,31 @@ export const Select = ({ placeholder, options, ...rest }: Props) => (
     </SelectRadix.Trigger>
 
     <SelectRadix.Portal>
-      <SelectRadix.Content className={styles.content}>
+      <SelectRadix.Content
+        align="end"
+        className={styles.content}
+        position="popper"
+        side="bottom"
+        sideOffset={6}
+      >
         <SelectRadix.Viewport className={styles.viewport}>
-          {options.map(({ value, label, disabled }) => (
-            <SelectItem disabled={disabled} key={value} value={value}>
-              {label}
-            </SelectItem>
-          ))}
+          <SelectRadix.Group>
+            <SelectRadix.Label className={styles.label}>Sort by</SelectRadix.Label>
+
+            {options.map(({ value, label, disabled }) => (
+              <>
+                <SelectRadix.Item className={styles.item} value={value} disabled={disabled}>
+                  <SelectRadix.ItemText>
+                    <span className={styles.itemText}>{label}</span>
+                  </SelectRadix.ItemText>
+
+                  <SelectRadix.ItemIndicator className={styles.itemIndicator}>
+                    <Check size={14} />
+                  </SelectRadix.ItemIndicator>
+                </SelectRadix.Item>
+              </>
+            ))}
+          </SelectRadix.Group>
         </SelectRadix.Viewport>
       </SelectRadix.Content>
     </SelectRadix.Portal>
