@@ -13,9 +13,11 @@ type Story = StoryObj<typeof IconButton>;
 
 export const Default: Story = {
   args: {
-    shape: 'solid',
-    size: 'md',
     icon: Search,
+    size: 'md',
+    variant: 'solid',
+    shape: 'square',
+    dot: true,
     disabled: false,
   },
 };

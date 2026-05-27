@@ -10,17 +10,23 @@ type Props = {
   size?: 'sm' | 'md' | 'lg';
   variant?: 'solid' | 'ghost';
   shape?: 'square' | 'circle';
+  dot?: boolean;
 } & ComponentPropsWithoutRef<'button'>;
 
 export const IconButton = ({
   icon: Icon,
+  size = 'md',
   variant = 'solid',
   shape = 'square',
-  size = 'md',
+  dot,
   ...rest
 }: Props) => {
   return (
-    <button className={clsx(styles.btn, styles[variant], styles[shape], styles[size])} {...rest}>
+    <button
+      className={clsx(styles.btn, styles[variant], styles[shape], styles[size])}
+      data-dot={dot}
+      {...rest}
+    >
       <Icon size={size === 'sm' ? 16 : size === 'lg' ? 22 : 18} />
     </button>
   );
