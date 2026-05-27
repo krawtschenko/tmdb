@@ -12,7 +12,7 @@ type Props = {
   options: Option[];
 } & Omit<ComponentPropsWithoutRef<typeof SelectRadix.Root>, 'children'>;
 
-export const Select = ({ placeholder, options, ...rest }: Props) => (
+export const Select = ({ placeholder = 'Sort by', options, ...rest }: Props) => (
   <SelectRadix.Root {...rest}>
     <SelectRadix.Trigger className={styles.trigger}>
       <SelectRadix.Value placeholder={placeholder} />
@@ -33,9 +33,9 @@ export const Select = ({ placeholder, options, ...rest }: Props) => (
       >
         <SelectRadix.Viewport className={styles.viewport}>
           <SelectRadix.Group>
-            <SelectRadix.Label className={styles.label}>Sort by</SelectRadix.Label>
+            <SelectRadix.Label className={styles.label}>{placeholder}</SelectRadix.Label>
             {options.map(({ value, label, disabled }) => (
-              <>
+              <div key={value}>
                 <SelectRadix.Item className={styles.item} value={value} disabled={disabled}>
                   <SelectRadix.ItemText>
                     <span className={styles.itemText}>{label}</span>
@@ -45,7 +45,7 @@ export const Select = ({ placeholder, options, ...rest }: Props) => (
                     <Check size={14} />
                   </SelectRadix.ItemIndicator>
                 </SelectRadix.Item>
-              </>
+              </div>
             ))}
           </SelectRadix.Group>
         </SelectRadix.Viewport>

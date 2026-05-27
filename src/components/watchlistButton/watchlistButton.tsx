@@ -8,11 +8,12 @@ import styles from './watchlistButton.module.scss';
 
 type Props = {
   compact?: boolean;
+  onDark?: boolean;
 } & Omit<ComponentPropsWithoutRef<typeof Toggle.Root>, 'children'>;
 
-export const WatchlistButton = ({ compact = false, className, ...rest }: Props) => (
+export const WatchlistButton = ({ compact = false, onDark = false, className, ...rest }: Props) => (
   <Toggle.Root
-    className={clsx(styles.btn, compact && styles.icon, className)}
+    className={clsx(styles.btn, compact && styles.icon, onDark && styles.onDark, className)}
     aria-label={compact ? 'Save to watchlist' : undefined}
     {...rest}
   >

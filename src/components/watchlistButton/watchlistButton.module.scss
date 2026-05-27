@@ -31,6 +31,16 @@
     color: var(--accent);
   }
 
+  &.onDark {
+    box-shadow: inset 0 0 0 1px oklch(97% 0.008 80deg / 35%);
+    color: oklch(97% 0.008 80deg);
+
+    &:hover {
+      box-shadow: inset 0 0 0 1px var(--accent);
+      color: var(--accent);
+    }
+  }
+
   &[data-state='on'] {
     box-shadow: inset 0 0 0 1px var(--accent);
     background: var(--accent-soft);

@@ -15,6 +15,7 @@ type Story = StoryObj<typeof WatchlistButton>;
 export const Default: Story = {
   args: {
     compact: true,
+    onDark: false,
   },
 };
 

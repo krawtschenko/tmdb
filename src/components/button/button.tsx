@@ -29,18 +29,16 @@ export const Button = <T extends ElementType = 'button'>({
 }: Props<T>) => {
   const Tag = as ?? 'button';
 
+  const rootStyles = clsx(
+    styles.btn,
+    styles[variant],
+    styles[size],
+    fullWidth && styles.fullWidth,
+    className,
+  );
+
   return (
-    <Tag
-      className={clsx(
-        styles.btn,
-        styles[variant],
-        styles[size],
-        fullWidth && styles.fullWidth,
-        className,
-      )}
-      data-loading={loading || undefined}
-      {...rest}
-    >
+    <Tag className={rootStyles} data-loading={loading || undefined} {...rest}>
       {IconLeft && <IconLeft size={size === 'sm' ? 14 : size === 'lg' ? 18 : 16} />}
       {children}
       {IconRight && <IconRight size={size === 'sm' ? 14 : size === 'lg' ? 18 : 16} />}
