@@ -23,16 +23,17 @@ export const Select = ({ placeholder, options, ...rest }: Props) => (
 
     <SelectRadix.Portal>
       <SelectRadix.Content
-        align="end"
         className={styles.content}
+        align="end"
         position="popper"
         side="bottom"
         sideOffset={6}
+        avoidCollisions={false}
+        onCloseAutoFocus={(e) => e.preventDefault()}
       >
         <SelectRadix.Viewport className={styles.viewport}>
           <SelectRadix.Group>
             <SelectRadix.Label className={styles.label}>Sort by</SelectRadix.Label>
-
             {options.map(({ value, label, disabled }) => (
               <>
                 <SelectRadix.Item className={styles.item} value={value} disabled={disabled}>

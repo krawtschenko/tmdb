@@ -10,14 +10,18 @@ export default meta;
 
 type Story = StoryObj<typeof Select>;
 
+const SORT_OPTIONS = [
+  { value: 'rating', label: 'Highest rated' },
+  { value: 'newest', label: 'Newest first' },
+  { value: 'oldest', label: 'Oldest first' },
+  { value: 'title', label: 'A → Z', disabled: true },
+  { value: 'popular', label: 'Most watched' },
+];
+
 export const Default: Story = {
   args: {
+    // open: true,
     placeholder: 'Sort by…',
-    options: [
-      { value: 'popularity', label: 'Popularity' },
-      { value: 'rating', label: 'Rating' },
-      { value: 'release_date', label: 'Release date', disabled: true },
-      { value: 'title', label: 'Title' },
-    ],
+    options: SORT_OPTIONS,
   },
 };
