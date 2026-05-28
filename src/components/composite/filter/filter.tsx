@@ -7,56 +7,56 @@ import { Button, IconButton, TagGroup } from '@/components';
 
 import styles from './filter.module.scss';
 
-type ArrayOption = { value: string; label: string };
+type Option = { value: string; label: string; checked: boolean };
 
-export type FilterValue = {
-  tags: string[];
-  rating: string[];
-  runtime: string[];
-};
+export type Options = Record<string, Option[]>;
 
 type Props = {
-  count?: number;
-  tags: ArrayOption[];
-  rating: ArrayOption[];
-  runtime: ArrayOption[];
-  value?: FilterValue;
-  onApply?: (value: FilterValue) => void;
+  options: Options;
+  onApply: (options: Options) => void;
 } & ComponentPropsWithoutRef<typeof Popover.Root>;
 
-export const Filter = ({ count, tags, rating, runtime, value, onApply, ...rest }: Props) => {
-  const emptyValue: FilterValue = { tags: [], rating: [], runtime: [] };
-
+export const Filter = ({ options, onApply, ...rest }: Props) => {
   const [open, setOpen] = useState(false);
-  const [pending, setPending] = useState<FilterValue>(value ?? emptyValue);
+  const [pending, setPending] = useState<Options>(options);
 
-  function handleOpenChange(nextOpen: boolean) {
-    if (nextOpen) setPending(value ?? emptyValue);
-    setOpen(nextOpen);
+  const count = Object.values(options)
+    .flat()
+    .filter((o) => o.checked).length;
+
+  function handleOpenChange(next: boolean) {
+    if (next) setPending(options);
+    setOpen(next);
   }
 
-  function applyHandler() {
-    onApply?.(pending);
-    setOpen(false);
+  function updatePending(key: keyof Options, values: string[]) {
+    setPending((prev) => ({
+      ...prev,
+      [key]: prev[key].map((o) => ({ ...o, checked: values.includes(o.value) })),
+    }));
   }
 
   function clearHandler() {
-    setPending(emptyValue);
+    setPending((prev) => {
+      const next: Options = {};
+
+      for (const key in prev) {
+        next[key] = prev[key].map((o) => ({ ...o, checked: false }));
+      }
+
+      return next;
+    });
+  }
+
+  function applyHandler() {
+    onApply(pending);
+    setOpen(false);
   }
 
   return (
     <Popover.Root {...rest} open={open} onOpenChange={handleOpenChange}>
       <Popover.Trigger asChild>
-        {count ? (
-          <IconButton
-            icon={SlidersHorizontal}
-            indicator="count"
-            count={count}
-            className={styles.trigger}
-          />
-        ) : (
-          <IconButton icon={SlidersHorizontal} className={styles.trigger} />
-        )}
+        <IconButton icon={SlidersHorizontal} count={count} className={styles.trigger} />
       </Popover.Trigger>
 
       <Popover.Portal>
@@ -68,43 +68,24 @@ export const Filter = ({ count, tags, rating, runtime, value, onApply, ...rest }
                 Clear all
               </button>
             </div>
+
             <div className={styles.body}>
-              <div className={styles.section}>
-                <span className={styles.label}>Year</span>
-                <TagGroup
-                  className={styles.tags}
-                  type="multiple"
-                  tabs={tags}
-                  value={pending.tags}
-                  onValueChange={(v) => setPending((p) => ({ ...p, tags: v }))}
-                />
-              </div>
-              <div className={styles.section}>
-                <span className={styles.label}>Rating</span>
-                <TagGroup
-                  className={styles.tags}
-                  type="multiple"
-                  tabs={rating}
-                  value={pending.rating}
-                  onValueChange={(v) => setPending((p) => ({ ...p, rating: v }))}
-                />
-              </div>
-              <div className={styles.section}>
-                <span className={styles.label}>Runtime</span>
-                <TagGroup
-                  className={styles.tags}
-                  type="multiple"
-                  tabs={runtime}
-                  value={pending.runtime}
-                  onValueChange={(v) => setPending((p) => ({ ...p, runtime: v }))}
-                />
-              </div>
+              {Object.entries(pending).map(([key, opts]) => (
+                <div key={key} className={styles.section}>
+                  <span className={styles.label}>{key}</span>
+                  <TagGroup
+                    className={styles.tags}
+                    type="multiple"
+                    tabs={opts}
+                    value={opts.filter((o) => o.checked).map((o) => o.value)}
+                    onValueChange={(v) => updatePending(key, v)}
+                  />
+                </div>
+              ))}
             </div>
+
             <div className={styles.footer}>
-              <span className={styles.count}>
-                {pending.tags.length + pending.rating.length + pending.runtime.length} active
-                filters
-              </span>
+              <span className={styles.count}>{count} active filters</span>
               <Button size="sm" onClick={applyHandler}>
                 Apply
               </Button>
