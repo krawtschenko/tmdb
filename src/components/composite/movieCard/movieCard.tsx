@@ -23,7 +23,7 @@ export const MovieCard = ({ title, year, runtime, rating, saved, featured }: Pro
         <PosterImg />
 
         <div className={styles.ratingPin}>
-          <RatingBadge value={rating} variant="pill" dot={false} />
+          <RatingBadge value={rating} variant="pill" indicator="ring" />
         </div>
 
         <div className={styles.veil} />

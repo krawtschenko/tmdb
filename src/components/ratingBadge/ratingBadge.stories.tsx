@@ -15,6 +15,6 @@ export const Default: Story = {
     value: 9,
     denom: '10',
     variant: 'pill',
-    dot: true,
+    indicator: 'ring',
   },
 };

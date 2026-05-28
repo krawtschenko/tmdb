@@ -15,6 +15,24 @@
     backdrop-filter: blur(8px);
   }
 
+  .ring {
+    display: block;
+    flex: none;
+    align-self: center;
+
+    .track {
+      stroke: currentcolor;
+      opacity: 0.22;
+    }
+
+    .fill {
+      stroke: currentcolor;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+  }
+
   .dot {
     width: 6px;
     height: 6px;
