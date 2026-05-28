@@ -1,6 +1,8 @@
+import { useState } from 'react';
+
 import { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { Filter } from './filter';
+import { Filter, FilterValue } from './filter';
 
 const meta: Meta<typeof Filter> = {
   component: Filter,
@@ -38,5 +40,23 @@ export const Default: Story = {
     tags: TAGS,
     rating: RATING,
     runtime: RUNTIME,
+  },
+};
+
+export const Controlled: Story = {
+  render: () => {
+    const [value, setValue] = useState<FilterValue>({ tags: [], rating: [], runtime: [] });
+    const count = value.tags.length + value.rating.length + value.runtime.length || undefined;
+
+    return (
+      <Filter
+        tags={TAGS}
+        rating={RATING}
+        runtime={RUNTIME}
+        value={value}
+        onApply={setValue}
+        count={count}
+      />
+    );
   },
 };

@@ -1,4 +1,4 @@
-import { PosterImg } from '@/components/movieCard/movieCard';
+import { PosterImg } from '@/components/composite/movieCard/movieCard';
 
 import styles from './actorCard.module.scss';
 

@@ -1,5 +1,6 @@
 export * from './badge';
 export * from './button';
+export * from './dropdown';
 export * from './genreTag';
 export * from './iconButton';
 export * from './input';
