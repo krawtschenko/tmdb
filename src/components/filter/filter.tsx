@@ -1,55 +1,68 @@
 import { ComponentPropsWithoutRef } from 'react';
 
 import * as Popover from '@radix-ui/react-popover';
-import { Filter as FilterIcon, GemIcon } from 'lucide-react';
+import { SlidersHorizontal } from 'lucide-react';
+
+import { Button, IconButton, TagGroup } from '@/components';
 
 import styles from './filter.module.scss';
 
-type Props = {} & ComponentPropsWithoutRef<typeof Popover.Root>;
+type ArrayOption = { value: string; label: string };
 
-export const Filter = ({ ...rest }: Props) => (
+type Props = {
+  count?: number;
+  tags: ArrayOption[];
+  rating: ArrayOption[];
+  runtime: ArrayOption[];
+} & ComponentPropsWithoutRef<typeof Popover.Root>;
+
+export const Filter = ({ count, tags, rating, runtime, ...rest }: Props) => (
   <Popover.Root {...rest}>
     <Popover.Trigger asChild>
-      <button className={styles.IconButton} aria-label="Update dimensions">
-        <FilterIcon />
-      </button>
+      {count ? (
+        <IconButton
+          icon={SlidersHorizontal}
+          indicator="count"
+          count={count}
+          className={styles.trigger}
+        />
+      ) : (
+        <IconButton icon={SlidersHorizontal} className={styles.trigger} />
+      )}
     </Popover.Trigger>
 
     <Popover.Portal>
-      <Popover.Content className={styles.Content} sideOffset={5}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          <p className={styles.Text} style={{ marginBottom: 10 }}>
-            Dimensions
-          </p>
-          <fieldset className={styles.Fieldset}>
-            <label className={styles.Label} htmlFor="width">
-              Width
-            </label>
-            <input className={styles.Input} id="width" defaultValue="100%" />
-          </fieldset>
-          <fieldset className={styles.Fieldset}>
-            <label className={styles.Label} htmlFor="maxWidth">
-              Max. width
-            </label>
-            <input className={styles.Input} id="maxWidth" defaultValue="300px" />
-          </fieldset>
-          <fieldset className={styles.Fieldset}>
-            <label className={styles.Label} htmlFor="height">
-              Height
-            </label>
-            <input className={styles.Input} id="height" defaultValue="25px" />
-          </fieldset>
-          <fieldset className={styles.Fieldset}>
-            <label className={styles.Label} htmlFor="maxHeight">
-              Max. height
-            </label>
-            <input className={styles.Input} id="maxHeight" defaultValue="none" />
-          </fieldset>
+      <Popover.Content
+        className={styles.content}
+        align="end"
+        side="bottom"
+        sideOffset={6}
+        avoidCollisions={false}
+      >
+        <div className={styles.header}>
+          <span>Filters</span>
+          <button className={styles.clear}>Clear all</button>
         </div>
-        <Popover.Close className={styles.Close} aria-label="Close">
-          <GemIcon />
-        </Popover.Close>
-        <Popover.Arrow className={styles.Arrow} />
+
+        <div className={styles.body}>
+          <div className={styles.section}>
+            <span className={styles.label}>Year</span>
+            <TagGroup className={styles.tags} type="multiple" tabs={tags} />
+          </div>
+          <div className={styles.section}>
+            <span className={styles.label}>Rating</span>
+            <TagGroup className={styles.tags} type="multiple" tabs={rating} />
+          </div>
+          <div className={styles.section}>
+            <span className={styles.label}>Runtime</span>
+            <TagGroup className={styles.tags} type="multiple" tabs={runtime} />
+          </div>
+        </div>
+
+        <div className={styles.footer}>
+          <span className={styles.count}>{count} active filters</span>
+          <Button size="sm">Apply</Button>
+        </div>
       </Popover.Content>
     </Popover.Portal>
   </Popover.Root>

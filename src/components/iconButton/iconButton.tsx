@@ -22,6 +22,7 @@ export const IconButton = ({
   shape = 'square',
   indicator,
   count,
+  className,
   ...rest
 }: Props) => {
   const rootStyles = clsx(
@@ -31,6 +32,7 @@ export const IconButton = ({
     styles[shape],
     indicator === 'dot' && styles.dot,
     indicator === 'count' && styles.count,
+    className,
   );
 
   return (
