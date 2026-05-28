@@ -10,8 +10,8 @@ type Props = {
   size?: 'sm' | 'md' | 'lg';
   variant?: 'solid' | 'ghost';
   shape?: 'square' | 'circle';
-  dot?: boolean;
   count?: number;
+  dot?: boolean;
 } & ComponentPropsWithoutRef<'button'>;
 
 export const IconButton = ({
@@ -19,8 +19,8 @@ export const IconButton = ({
   size = 'md',
   variant = 'solid',
   shape = 'square',
-  dot,
   count,
+  dot,
   className,
   ...rest
 }: Props) => {
@@ -29,8 +29,7 @@ export const IconButton = ({
     styles[size],
     styles[variant],
     styles[shape],
-    dot && styles.dot,
-    count && styles.count,
+    count != null && count > 0 ? (dot ? styles.dot : styles.count) : '',
     className,
   );
 

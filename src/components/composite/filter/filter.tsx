@@ -60,36 +60,40 @@ export const Filter = ({ options, onApply, ...rest }: Props) => {
       </Popover.Trigger>
 
       <Popover.Portal>
-        <Popover.Content align="end" side="bottom" sideOffset={6} avoidCollisions={false}>
-          <div className={styles.content}>
-            <div className={styles.header}>
-              <span>Filters</span>
-              <button className={styles.clear} onClick={clearHandler}>
-                Clear all
-              </button>
-            </div>
+        <Popover.Content
+          className={styles.content}
+          align="end"
+          side="bottom"
+          sideOffset={6}
+          avoidCollisions={false}
+        >
+          <div className={styles.header}>
+            <span>Filters</span>
+            <button className={styles.clear} onClick={clearHandler}>
+              Clear all
+            </button>
+          </div>
 
-            <div className={styles.body}>
-              {Object.entries(pending).map(([key, opts]) => (
-                <div key={key} className={styles.section}>
-                  <span className={styles.label}>{key}</span>
-                  <TagGroup
-                    className={styles.tags}
-                    type="multiple"
-                    tabs={opts}
-                    value={opts.filter((o) => o.checked).map((o) => o.value)}
-                    onValueChange={(v) => updatePending(key, v)}
-                  />
-                </div>
-              ))}
-            </div>
+          <div className={styles.body}>
+            {Object.entries(pending).map(([key, opts]) => (
+              <div key={key} className={styles.section}>
+                <span className={styles.label}>{key}</span>
+                <TagGroup
+                  className={styles.tags}
+                  type="multiple"
+                  tabs={opts}
+                  value={opts.filter((o) => o.checked).map((o) => o.value)}
+                  onValueChange={(v) => updatePending(key, v)}
+                />
+              </div>
+            ))}
+          </div>
 
-            <div className={styles.footer}>
-              <span className={styles.count}>{count} active filters</span>
-              <Button size="sm" onClick={applyHandler}>
-                Apply
-              </Button>
-            </div>
+          <div className={styles.footer}>
+            <span className={styles.count}>{count} active filters</span>
+            <Button size="sm" onClick={applyHandler}>
+              Apply
+            </Button>
           </div>
         </Popover.Content>
       </Popover.Portal>

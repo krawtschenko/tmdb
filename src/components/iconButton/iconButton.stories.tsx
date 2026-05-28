@@ -17,7 +17,7 @@ export const Default: Story = {
     size: 'md',
     variant: 'solid',
     shape: 'square',
-    indicator: 'dot',
+    dot: true,
     disabled: false,
   },
 };
@@ -28,8 +28,7 @@ export const Count: Story = {
     size: 'md',
     variant: 'solid',
     shape: 'square',
-    indicator: 'count',
-    count: 12,
+    count: 0,
     disabled: false,
   },
 };
