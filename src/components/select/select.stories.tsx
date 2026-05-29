@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Select } from './select';
 
 const meta: Meta<typeof Select> = {
+  title: 'Components/Select',
   component: Select,
 };
 
@@ -20,7 +21,6 @@ const SORT_OPTIONS = [
 
 export const Default: Story = {
   args: {
-    // open: true,
     placeholder: 'Sort by…',
     options: SORT_OPTIONS,
   },

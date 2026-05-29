@@ -5,6 +5,7 @@ import { useSearchShortcut } from '@/hooks/useSearchShortcut';
 import { SearchInput } from './searchInput';
 
 const meta: Meta<typeof SearchInput> = {
+  title: 'Components/SearchInput',
   component: SearchInput,
 };
 
@@ -16,14 +17,12 @@ export const Default: Story = {
   args: {
     placeholder: 'Search films, people, collections…',
   },
-};
-
-export const WithKeyboardShortcut: Story = {
-  args: {
-    placeholder: 'Search…',
-  },
   render: (args) => {
     const ref = useSearchShortcut<HTMLInputElement>();
-    return <SearchInput ref={ref} {...args} />;
+    return (
+      <div style={{ width: '500px' }}>
+        <SearchInput ref={ref} {...args} />
+      </div>
+    );
   },
 };

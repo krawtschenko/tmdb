@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { TagGroup } from './tagGroup';
 
 const meta: Meta<typeof TagGroup> = {
+  title: 'Components/TagGroup',
   component: TagGroup,
 };
 
@@ -17,7 +18,7 @@ const TABS = [
   { value: 'watchlist', label: 'Watchlist' },
 ];
 
-export const Default: Story = {
+export const Single: Story = {
   args: {
     type: 'single',
     tabs: TABS,

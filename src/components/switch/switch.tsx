@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, useId } from 'react';
 
 import * as SwitchRadix from '@radix-ui/react-switch';
 import clsx from 'clsx';
+import { Moon, Sun } from 'lucide-react';
 
 import styles from './switch.module.scss';
 
@@ -16,8 +17,15 @@ export const Switch = ({ size = 'md', label, className, ...rest }: Props) => {
   return (
     <div className={clsx(styles.switch, className)}>
       <SwitchRadix.Root id={id} className={clsx(styles.root, styles[size])} {...rest}>
+        <div className={styles.moon}>
+          <Moon size={14} />
+        </div>
+        <div className={styles.sun}>
+          <Sun size={14} />
+        </div>
         <SwitchRadix.Thumb className={styles.thumb} />
       </SwitchRadix.Root>
+
       {label && (
         <label className={styles.label} htmlFor={id}>
           {label}

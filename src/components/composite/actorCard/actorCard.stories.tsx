@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { ActorCard } from './actorCard';
 
 const meta: Meta<typeof ActorCard> = {
+  title: 'Composite/ActorCard',
   component: ActorCard,
 };
 

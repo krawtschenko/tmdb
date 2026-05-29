@@ -3,6 +3,7 @@ import { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Input } from './input';
 
 const meta: Meta<typeof Input> = {
+  title: 'Components/Input',
   component: Input,
 };
 
@@ -19,10 +20,17 @@ export const Default: Story = {
   },
 };
 
-export const Error: Story = {
-  args: {
-    label: 'Email',
-    type: 'password',
-    error: 'At least 8 characters.',
-  },
+export const Variants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <Input label="Email" placeholder="hello@reel.app" hint="We'll never share this." />
+      <Input label="Email" placeholder="Password" hint="At least 8 characters." />
+      <Input
+        label="Password"
+        type="password"
+        hint="At least 8 characters."
+        error="At least 8 characters."
+      />
+    </div>
+  ),
 };

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Header } from './header';
 
 const meta: Meta<typeof Header> = {
+  title: 'Composite/Header',
   component: Header,
 };
 

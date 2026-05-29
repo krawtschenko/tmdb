@@ -5,6 +5,7 @@ import { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { WatchlistButton } from './watchlistButton';
 
 const meta: Meta<typeof WatchlistButton> = {
+  title: 'Components/WatchlistButton',
   component: WatchlistButton,
 };
 

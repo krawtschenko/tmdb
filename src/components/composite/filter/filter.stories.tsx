@@ -5,6 +5,7 @@ import { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Filter, Options } from './filter';
 
 const meta: Meta<typeof Filter> = {
+  title: 'Composite/Filter',
   component: Filter,
 };
 

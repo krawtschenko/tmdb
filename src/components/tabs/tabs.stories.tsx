@@ -5,6 +5,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Tabs } from './tabs';
 
 const meta: Meta<typeof Tabs> = {
+  title: 'Components/Tabs',
   component: Tabs,
 };
 

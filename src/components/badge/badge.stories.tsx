@@ -4,6 +4,7 @@ import { Clock8 } from 'lucide-react';
 import { Badge } from './badge';
 
 const meta: Meta<typeof Badge> = {
+  title: 'Components/Badge',
   component: Badge,
 };
 
@@ -17,4 +18,16 @@ export const Default: Story = {
     text: 'Watched',
     icon: Clock8,
   },
+};
+
+export const Variants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <Badge variant="neutral" text="Neutral" />
+      <Badge variant="accent" text="Accent" />
+      <Badge variant="signal" text="Signal" />
+      <Badge variant="success" text="Success" />
+      <Badge variant="solid" text="Solid" />
+    </div>
+  ),
 };

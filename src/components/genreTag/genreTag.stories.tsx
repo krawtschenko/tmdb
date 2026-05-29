@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { GenreTag } from './genreTag';
 
 const meta: Meta<typeof GenreTag> = {
+  title: 'Components/GenreTag',
   component: GenreTag,
 };
 

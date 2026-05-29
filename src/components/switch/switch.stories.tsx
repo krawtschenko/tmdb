@@ -1,10 +1,9 @@
-import { useState } from 'react';
-
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 import { Switch } from './switch';
 
 const meta: Meta<typeof Switch> = {
+  title: 'Components/Switch',
   component: Switch,
 };
 
@@ -20,9 +19,11 @@ export const Default: Story = {
   },
 };
 
-export const Controlled: Story = {
-  render: () => {
-    const [checked, setChecked] = useState(false);
-    return <Switch checked={checked} onCheckedChange={setChecked} label={checked ? 'On' : 'Off'} />;
-  },
+export const Variants: Story = {
+  render: () => (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <Switch size="md" label="Switch" />
+      <Switch size="lg" label="Switch" />
+    </div>
+  ),
 };

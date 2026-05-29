@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Dropdown } from './dropdown';
 
 const meta: Meta<typeof Dropdown> = {
+  title: 'Components/Dropdown',
   component: Dropdown,
 };
 
