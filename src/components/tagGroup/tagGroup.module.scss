@@ -40,6 +40,11 @@
       }
     }
 
+    &:focus-visible {
+      outline: 0;
+      box-shadow: var(--ring-focus);
+    }
+
     &:disabled {
       cursor: not-allowed;
       opacity: 0.4;

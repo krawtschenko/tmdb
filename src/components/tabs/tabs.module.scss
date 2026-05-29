@@ -15,10 +15,16 @@
     cursor: pointer;
     transition:
       color var(--dur-fast) var(--ease-out),
-      background var(--dur-fast) var(--ease-out);
+      background var(--dur-fast) var(--ease-out),
+      box-shadow var(--dur-fast) var(--ease-out);
 
     &:hover {
       color: var(--fg-primary);
+    }
+
+    &:focus-visible {
+      outline: 0;
+      box-shadow: var(--ring-focus);
     }
 
     &[data-state='active'] {
