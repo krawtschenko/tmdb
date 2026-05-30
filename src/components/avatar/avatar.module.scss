@@ -1,4 +1,4 @@
-.avatar {
+.root {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +16,11 @@
     color var(--dur-fast) var(--ease-out),
     box-shadow var(--dur-fast) var(--ease-out);
   appearance: none;
+
+  &:focus-visible {
+    outline: 0;
+    box-shadow: var(--ring-focus);
+  }
 
   &.lg {
     width: 44px;

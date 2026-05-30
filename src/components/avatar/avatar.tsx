@@ -12,7 +12,7 @@ type Props = { avatarSrc?: string; size?: 'sm' | 'lg' } & ComponentPropsWithoutR
 
 export const Avatar = ({ className, avatarSrc, size = 'sm', ...rest }: Props) => {
   return (
-    <AvatarRadix.Root className={clsx(styles.avatar, styles[size], className)} {...rest}>
+    <AvatarRadix.Root tabIndex={0} className={clsx(styles.root, styles[size], className)} {...rest}>
       <AvatarRadix.Image className={styles.img} src={avatarSrc} alt="avatar" />
       <AvatarRadix.Fallback className={styles.fallback}>
         <UserRound size={size === 'lg' ? 22 : 18} />

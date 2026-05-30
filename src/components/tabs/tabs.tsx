@@ -17,7 +17,12 @@ export const Tabs = ({ items, className, ...rest }: Props) => {
     <TabsRadix.Root className={clsx(styles.root, className)} {...rest}>
       <TabsRadix.List className={styles.list}>
         {items.map(({ label, value }) => (
-          <TabsRadix.Trigger className={styles.trigger} value={value} key={value}>
+          <TabsRadix.Trigger
+            className={styles.trigger}
+            value={value}
+            key={value}
+            onClick={() => alert(value)}
+          >
             {label}
           </TabsRadix.Trigger>
         ))}

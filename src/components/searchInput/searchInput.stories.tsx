@@ -1,7 +1,5 @@
 import { Meta, StoryObj } from '@storybook/nextjs-vite';
 
-import { useSearchShortcut } from '@/hooks/useSearchShortcut';
-
 import { SearchInput } from './searchInput';
 
 const meta: Meta<typeof SearchInput> = {
@@ -18,10 +16,9 @@ export const Default: Story = {
     placeholder: 'Search films, people, collections…',
   },
   render: (args) => {
-    const ref = useSearchShortcut<HTMLInputElement>();
     return (
       <div style={{ width: '500px' }}>
-        <SearchInput ref={ref} {...args} />
+        <SearchInput {...args} />
       </div>
     );
   },
