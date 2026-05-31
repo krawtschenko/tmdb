@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist_Mono, Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google';
 
+import { Container } from '@/components';
+
 import '../styles/styles.scss';
 
 const spaceGrotesk = Space_Grotesk({
@@ -23,7 +25,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'TMDB',
+  title: 'REEL',
   description: '',
 };
 
@@ -37,7 +39,9 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${geistMono.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Container>{children}</Container>
+      </body>
     </html>
   );
 }

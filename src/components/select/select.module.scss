@@ -12,7 +12,6 @@
   font-family: var(--ff-sans);
   font-size: var(--fs-md);
   cursor: pointer;
-  user-select: none;
 
   &[data-placeholder] {
     color: var(--fg-muted);

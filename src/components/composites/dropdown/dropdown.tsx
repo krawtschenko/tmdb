@@ -15,7 +15,7 @@ type Props = { name?: string; email?: string; theme?: 'light' | 'dark' } & Compo
 export const Dropdown = ({ name, email, theme = 'dark', ...rest }: Props) => {
   return (
     <DropdownMenu.Root {...rest}>
-      <DropdownMenu.Trigger asChild className={styles.trigger}>
+      <DropdownMenu.Trigger asChild>
         <Avatar />
       </DropdownMenu.Trigger>
 
@@ -45,17 +45,17 @@ export const Dropdown = ({ name, email, theme = 'dark', ...rest }: Props) => {
             </DropdownMenu.Item>
             <DropdownMenu.Item className={styles.item}>
               <Clock size={16} />
-              <span>Your watchlist</span>
+              <span>Continue watching</span>
             </DropdownMenu.Item>
           </div>
           <div className={styles.section}>
             <DropdownMenu.Item className={styles.item}>
               <SlidersHorizontal size={16} />
-              <span>Continue watching</span>
+              <span>Preferences</span>
             </DropdownMenu.Item>
             <DropdownMenu.Item className={styles.item}>
               {theme === 'dark' ? <Moon size={16} /> : <Sun size={16} />}
-              <span>Your watchlist</span>
+              <span>Appearance</span>
               <span className={styles.kbd}>{theme}</span>
             </DropdownMenu.Item>
           </div>
