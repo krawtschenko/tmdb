@@ -1,15 +1,1 @@
-export { Avatar } from './avatar';
-export { Badge } from './badge';
-export { Button } from './button';
-export { Container } from './container';
-export { GenreTag } from './genreTag';
-export { IconButton } from './iconButton';
-export { Input } from './input';
-export { RatingBadge } from './ratingBadge';
-export { SearchInput } from './searchInput';
-export { Select } from './select';
-export { Spinner } from './spinner';
-export { Switch } from './switch';
-export { Tabs } from './tabs';
-export { TagGroup } from './tagGroup';
-export { WatchlistButton } from './watchlistButton';
+export * from './ui';

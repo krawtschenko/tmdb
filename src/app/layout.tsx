@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { Bai_Jamjuree, Geist_Mono, Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google';
 
-import { Container } from '@/components';
+import { Container } from '@/components/ui/Container';
 
-import '../styles/styles.scss';
+import '../styles/globals.scss';
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',

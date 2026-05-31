@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/nextjs-vite';
 
-import '../src/styles/styles.scss';
+import '../src/styles/globals.scss';
 import './fonts.scss';
 
 const preview: Preview = {

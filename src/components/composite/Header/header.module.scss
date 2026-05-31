@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+  width: 100%;
+  padding: var(--sp-4) var(--sp-8);
+  border-bottom: 1px solid var(--line-subtle);
+  background: oklch(from var(--bg-stage) l c h / 70%);
+  backdrop-filter: blur(20px) saturate(1.2);
+
+  .brand {
+    display: flex;
+    align-items: center;
+
+    // gap: var(--sp-1);
+    color: var(--fg-primary);
+    font-family: var(--ff-logo);
+    font-size: var(--fs-2xl);
+    font-style: italic;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .search {
+    flex: 1 1 auto;
+    max-width: 480px;
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    margin-left: auto;
+  }
+}
