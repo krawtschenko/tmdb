@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist_Mono, Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google';
+import { Bai_Jamjuree, Geist_Mono, Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google';
 
 import { Container } from '@/components';
 
@@ -24,6 +24,13 @@ const geistMono = Geist_Mono({
   weight: ['400', '500', '600'],
 });
 
+const baiJamjuree = Bai_Jamjuree({
+  variable: '--font-logo',
+  subsets: ['latin'],
+  weight: '600',
+  style: 'italic',
+});
+
 export const metadata: Metadata = {
   title: 'REEL',
   description: '',
@@ -37,7 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${geistMono.variable}`}
+      className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} ${geistMono.variable} ${baiJamjuree.variable}`}
     >
       <body>
         <Container>{children}</Container>

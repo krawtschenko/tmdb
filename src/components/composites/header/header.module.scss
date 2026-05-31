@@ -10,25 +10,14 @@
 
   .brand {
     display: flex;
-    align-items: baseline;
-    gap: 6px;
+    align-items: center;
+
+    // gap: var(--sp-1);
     color: var(--fg-primary);
-    font-family: var(--ff-display);
+    font-family: var(--ff-logo);
     font-size: var(--fs-2xl);
     font-style: italic;
     letter-spacing: -0.02em;
-
-    &::before {
-      content: '';
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      margin-right: 6px;
-      border-radius: 50%;
-      box-shadow: 0 0 0 3px var(--signal-soft);
-      background: var(--signal);
-      transform: translateY(-2px);
-    }
   }
 
   .search {
